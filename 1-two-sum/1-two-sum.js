@@ -4,11 +4,12 @@
  * @return {number[]}
  */
  var twoSum = function(nums, target) {
-    for (const [i, num] of Object.entries(nums)) {
-        const secondI = nums.indexOf(target - num);
-        
-        if (secondI !== -1 && Number(i) !== secondI) {
-            return [Number(i), secondI]
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        const secondI = i + nums.slice(i + 1).indexOf(target - num) + 1;
+
+        if (secondI !== -1 && i !== secondI) {
+            return [i, secondI];
         }
     }
 };
