@@ -5,9 +5,6 @@
  */
  var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
-        const num = nums[i];
-        // let secondI = i + nums.slice(i + 1).indexOf(target - num) + 1;
-
         secondI = -1;
         for (let j = i + 1; j < nums.length; j++) {
             if (nums[i] + nums[j] === target) {
