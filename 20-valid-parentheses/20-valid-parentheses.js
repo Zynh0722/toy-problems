@@ -1,16 +1,17 @@
+const matchMap = {
+        '(': 0, ')': 0,
+        '{': 1, '}': 1,
+        '[': 2, ']': 2,
+    };
+
+const open = ['(', '{', '['];
+
 /**
  * @param {string} s
  * @return {boolean}
  */
 var isValid = function(s) {
     const stack = [];
-    const matchMap = {
-        '(': 0, ')': 0,
-        '{': 1, '}': 1,
-        '[': 2, ']': 2,
-    };
-
-    const open = ['(', '{', '['];
 
     for (let i = 0; i < s.length; i++) {
         if (open.indexOf(s[i]) !== -1) {
